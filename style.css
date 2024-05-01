@@ -1,0 +1,243 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Blinker:wght@100;200;300;400;600;700;800;900&family=Inter:wght@100..900&display=swap');
+/* css varibles */
+/* definition */
+:root
+{
+    --Dark-graish-blue:hsl(236,13%,42%);
+    --Soft-red:hsl(5,85%,63%);
+    --Soft-orange:hsl(35,77%,62%);
+}
+
+*
+{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+    /* for correct measurement values accepting */
+}
+
+body
+{
+    font-family: "Inter";
+}
+
+/* container */
+
+.container
+{
+    margin: 0 auto;
+    max-width: 1240px;
+    padding: 0 30px;
+}
+
+/* nav-bar --parent */
+.navbar
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 0;
+    animation: 1.2s ease-in 0.5s SlideIn;
+}
+
+@keyframes SlideIn
+{
+    /* initial state */
+    0%
+    {   
+        /* bar comes from 100px of the y axis initially */
+        transform: translateY(-150px);
+        opacity: 0;
+    }
+    /* actual state */
+    100%
+    {
+        /* real positon */
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+
+.links ul
+{
+    display: flex;
+    gap: 1rem;
+}
+ul li
+{
+    list-style: none;
+}
+.links ul li a
+{
+    text-decoration: none;
+    /* invoking the css variable declred the name as --Dark-graish */
+    color: var(--Dark-graish-blue);
+    transition: 0.5s color ease;
+}
+.links ul li a:hover
+{
+    color: var(--Soft-red);
+}
+
+/*setting all the images to strech into the size of the device.importantly: Not exceeding the size*/
+img
+{
+    /* for setting the width ,does not exceeding the display size */
+    max-width: 100%;
+}
+/* the main section -grid layouting */
+.hero
+{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+}
+
+.new_articles
+{
+    background-color: hsl(240, 100%, 5%);
+    font-family: 'Inter',sans-serif;
+    color: hsl(36,100%,99%);
+    padding: 1rem;
+    transition: color 0.5s ease-in 1s;
+}
+
+.link-head:hover
+{
+
+    color:var(--Soft-orange);
+}
+.heading
+{
+    font-size: 2rem;
+    margin-top: 7px;
+    color: var(--Soft-orange);
+}
+.article
+{
+    margin: 25px 5px;
+}
+.article a 
+{
+    color: hsl(36,100%,99%);
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    display: inline-block;
+    transition: color 0.5s ease;
+}
+
+a.link-head
+{
+    text-decoration: none;
+}
+.hero-text
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+    padding: 0 0 0 0.5rem;
+}
+.hero-text h1
+{
+    font-size: 3rem;
+    font-weight: 800;
+}
+.button
+{
+    background-color: hsl(5,85%,63%);
+    padding: 1em 1.5em;
+    display: inline-block;
+    margin-top: 1.5em;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.25em;
+    color: #fff;
+    transition: background-color 0.3s ease-in-out;
+
+}
+.button:hover
+{
+    background-color: #000;
+}
+
+/* articles */
+.articles
+{
+    display: flex;
+    gap: 0.9rem;
+    margin: 4rem 0;
+}
+.new_article
+{
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-content: center;
+}
+
+.content h3:hover
+{
+    transition: color 0.5s ease 0s;
+}
+.content h3:hover
+{
+    color: var(--Soft-red);
+}
+.new_article .content
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.new_article img
+{
+    max-width: 120px;
+}
+.content h2
+{
+    color: hsl(233,8%,79%);
+    font-size: 2rem;
+}
+
+@media screen and (max-width:800px)
+{
+    .hero
+    {
+        /* for single column */
+        grid-template-columns: 1fr;
+
+    }
+    .hero-text h1
+    {
+        font-size: 40px;
+    }
+    .hero-text p
+    {
+        font-size: 18px;
+
+    }
+
+    .articles
+    {
+        flex-direction: column;
+        padding: 0 0 0 5px;
+        gap: 80px;
+    }
+    .content h2
+    {
+        font-size: 50px;
+    }
+    .content h3 
+    {
+    font-size: 24px;
+    } 
+    .content p 
+    {
+    font-size: 20px;
+    }
+}
